@@ -1,0 +1,219 @@
+1)  FIRST QUESTION
+  
+select *from college_individual;
++----+-----------------+--------------------------+-----------+
+| id | name            | email                    | menter_id |
++----+-----------------+--------------------------+-----------+
+|  1 | mayank pathak   | mayank@gmail.com         |           |
+|  2 | ankit choudhary | ankit@outlook.com        | 1         |
+|  3 | vijay saini     | vijay@gmail.com          |           |
+|  4 | harish solanki  | harish@outlook.com       | 1         |
+|  5 | sagar kemwal    | sagarkemwal096@gmail.com |           |
+|  6 | himanshu        | himanshu@outlook.com     | 5         |
+|  7 | nitin           | nitin@outlook.com        | 5         |
+|  8 | a1              | a1@gmail.com             |           |
+|  9 | a2              | a2@gmail.com             |           |
+| 10 | a3              | a3@gmail.com             |           |
+| 11 | a4              | a4@gmail.com             |           |
+| 12 | m11             | m11outlook.com           | 8         |
+| 13 | m12             | m11outlook.com           | 8         |
+| 14 | m21             | m21outlook.com           | 9         |
+| 15 | m22             | m22outlook.com           | 9         |
+| 16 | m31             | m31outlook.com           | 10        |
+| 17 | m32             | m32outlook.com           | 10        |
+| 18 | m41             | m41outlook.com           | 11        |
+| 19 | m42             | m42outlook.com           | 11        |
++----+-----------------+--------------------------+-----------+
+19 rows in set (0.11 sec)
+          
+                                    
+
+
+
+
+
+
+
+                                                              (FIRST_PART)
+
+
+  select *from college_individual where email like '%outlook.com' order by name;
++----+-----------------+----------------------+-----------+
+| id | name            | email                | menter_id |
++----+-----------------+----------------------+-----------+
+|  2 | ankit choudhary | ankit@outlook.com    | 1         |
+|  4 | harish solanki  | harish@outlook.com   | 1         |
+|  6 | himanshu        | himanshu@outlook.com | 5         |
+| 12 | m11             | m11outlook.com       | 8         |
+| 13 | m12             | m11outlook.com       | 8         |
+| 14 | m21             | m21outlook.com       | 9         |
+| 15 | m22             | m22outlook.com       | 9         |
+| 16 | m31             | m31outlook.com       | 10        |
+| 17 | m32             | m32outlook.com       | 10        |
+| 18 | m41             | m41outlook.com       | 11        |
+| 19 | m42             | m42outlook.com       | 11        |
+|  7 | nitin           | nitin@outlook.com    | 5         |
++----+-----------------+----------------------+-----------+
+12 rows in set (0.00 sec)
+
+
+
+
+
+
+
+                                         (THIRD_PART)
+
+
+
+ select *from college_individual where email like '%outlook.com' ;
++----+-----------------+----------------------+-----------+
+| id | name            | email                | menter_id |
++----+-----------------+----------------------+-----------+
+|  2 | ankit choudhary | ankit@outlook.com    | 1         |
+|  4 | harish solanki  | harish@outlook.com   | 1         |
+|  6 | himanshu        | himanshu@outlook.com | 5         |
+|  7 | nitin           | nitin@outlook.com    | 5         |
+| 12 | m11             | m11outlook.com       | 8         |
+| 13 | m12             | m11outlook.com       | 8         |
+| 14 | m21             | m21outlook.com       | 9         |
+| 15 | m22             | m22outlook.com       | 9         |
+| 16 | m31             | m31outlook.com       | 10        |
+| 17 | m32             | m32outlook.com       | 10        |
+| 18 | m41             | m41outlook.com       | 11        |
+| 19 | m42             | m42outlook.com       | 11        |
++----+-----------------+----------------------+-----------+
+12 rows in set (0.00 sec)
+  
+
+
+2)SECOND QUESTION
+
+                                                                       (FIRST_PART)
+
+
+
+
+
+
+ select sales.id ,concat(first_name," ",last_name) as name, seller.name,sales.amount from (( customer join sales on customer.customer_id=sales.customer_id)join seller on seller.seller_id=sales.seller_id);
++----+-----------------+--------------------+--------+
+| id | name            | name               | amount |
++----+-----------------+--------------------+--------+
+|  1 | mayank pathak   | saloni saini       | 2738   |
+|  2 | mayank pathak   | chandan chaudhary  | 9341   |
+|  3 | vijay saini     | pooja pathak       | 8239   |
+|  4 | harish solanki  | chandan chaudhary  | 4752   |
+|  5 | vijay saini     | nitin chauhan      | 4444   |
+|  6 | vijay saini     | sandeep solanki    | 3334   |
+|  7 | ankit chaudhary | sandeep solanki    | 2234   |
+|  8 | mayank pathak   | sandeep solanki    | 1234   |
+|  9 | ankit chaudhary | saloni saini       | 1534   |
+| 10 | ankit chaudhary | chandan chaudhary  | 1535   |
+| 11 | ankit chaudhary | saloni saini       | 1543   |
+| 12 | ankit chaudhary | sandeep solanki    | 1433   |
+| 13 | vijay saini     | sandeep solanki    | 1434   |
+| 14 | mayank pathak   | sandeep solanki    | 1994   |
+| 15 | mayank pathak   | pooja pathak       | 8894   |
++----+-----------------+--------------------+--------+
+15 rows in set (0.00 sec)
+
+
+                                                
+
+
+
+
+                                                              (SECOND_PART)
+
+
+
+
+
+
+
+ select sales.id ,concat(first_name," ",last_name) as name, seller.name,sales.amount from (( customer join sales on customer.customer_id=sales.customer_id)join seller on seller.seller_id=sales.seller_id);
++----+-----------------+--------------------+--------+
+| id | name            | name               | amount |
++----+-----------------+--------------------+--------+
+|  1 | mayank pathak   | saloni saini       | 2738   |
+|  2 | mayank pathak   | chandan chaudhary  | 9341   |
+|  3 | vijay saini     | pooja pathak       | 8239   |
+|  4 | harish solanki  | chandan chaudhary  | 4752   |
+|  5 | vijay saini     | nitin chauhan      | 4444   |
+|  6 | vijay saini     | sandeep solanki    | 3334   |
+|  7 | ankit chaudhary | sandeep solanki    | 2234   |
+|  8 | mayank pathak   | sandeep solanki    | 1234   |
+|  9 | ankit chaudhary | saloni saini       | 1534   |
+| 10 | ankit chaudhary | chandan chaudhary  | 1535   |
+| 11 | ankit chaudhary | saloni saini       | 1543   |
+| 12 | ankit chaudhary | sandeep solanki    | 1433   |
+| 13 | vijay saini     | sandeep solanki    | 1434   |
+| 14 | mayank pathak   | sandeep solanki    | 1994   |
+| 15 | mayank pathak   | pooja pathak       | 8894   |
++----+-----------------+--------------------+--------+
+15 rows in set (0.00 sec)
+
+
+3) THIRT QUESTION
+
+
+                                                                      (first challenge)
+ select concat(first_name," ",last_name) as customer_name,sum(sales.amount) as total_amount from sales join customer on customer.customer_id=sales.customer_id
+    -> group by customer.customer_id,customer.first_name
+    -> order by total_amount;
++-----------------+--------------+
+| customer_name   | total_amount |
++-----------------+--------------+
+| harish solanki  |         4752 |
+| ankit chaudhary |         8279 |
+| vijay saini     |        17451 |
+| mayank pathak   |        24201 |
++-----------------+--------------+
+4 rows in set (0.39 sec)
+
+4) FORTH QUESTION
+
+
+
+                                                                            FIRST_PART
+
+
+
+ select sales.id ,concat(first_name," ",last_name) as name, seller.name, seller.gender,  sales.amount,year("2019/10/13")-year(customer.date_of_birth) as age  from (( customer join sales on customer.customer_id=sales.customer_id)join seller on seller.seller_id=sales.seller_id)  where gender="female"
+    -> and
+    -> year("2019/10/13")-year(customer.date_of_birth)>=35;
++----+-----------------+---------------+--------+--------+------+
+| id | name            | name          | gender | amount | age  |
++----+-----------------+---------------+--------+--------+------+
+|  1 | mayank pathak   | saloni saini  | female | 2738   |   46 |
+|  3 | vijay saini     | pooja pathak  | female | 8239   |   85 |
+|  9 | ankit chaudhary | saloni saini  | female | 1534   |   44 |
+| 11 | ankit chaudhary | saloni saini  | female | 1543   |   44 |
+| 15 | mayank pathak   | pooja pathak  | female | 8894   |   46 |
++----+-----------------+---------------+--------+--------+------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+                                             SECOND_PART
+
+
+ select sales.id ,concat(first_name," ",last_name) as name, seller.name, seller.gender,  sales.amount,year("2019/10/13")-year(customer.date_of_birth) as age  from (( customer join sales on customer.customer_id=sales.customer_id)join seller on seller.seller_id=sales.seller_id)  where gender="female" and  year("2019/10/13")-year(customer.date_of_birth)>=35 order by amount asc;
++----+-----------------+---------------+--------+--------+------+
+| id | name            | name          | gender | amount | age  |
++----+-----------------+---------------+--------+--------+------+
+|  9 | ankit chaudhary | saloni saini  | female | 1534   |   44 |
+| 11 | ankit chaudhary | saloni saini  | female | 1543   |   44 |
+|  1 | mayank pathak   | saloni saini  | female | 2738   |   46 |
+|  3 | vijay saini     | pooja pathak  | female | 8239   |   85 |
+| 15 | mayank pathak   | pooja pathak  | female | 8894   |   46 |
++----+-----------------+---------------+--------+--------+------+
+5 rows in set (0.10 sec)
+
+  
+
+
+
